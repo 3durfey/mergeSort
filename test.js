@@ -9,11 +9,12 @@ function mergeSort(unsorted) {
 function merge(insertArray, array) {
   let index = 0;
   for (x in insertArray) {
-    while (insertArray[x] > array[index] && index <= array.length - 1) index++;
+    while (insertArray[x] > array[index]) index++;
     if (insertArray[x] !== array[index])
       array = [...array.slice(0, index), insertArray[x], ...array.slice(index)];
   }
   return array;
 }
 
-console.log(mergeSort([2, 8, 1, 3, 6, 7, 5, 4]));
+console.log(mergeSort([2, 2, 8, 1, 9, 3, 6, 7, 5, 4, 10]));
+console.log(mergeSort([]));
